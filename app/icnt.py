@@ -6,19 +6,18 @@ from flask_login import login_user, logout_user, login_required
 from app.database import DatabaseConnectionPool
 from app.settings import Config
 from app.models import Teacher, News
-from app.admin import login_manager, SecureModelView, SecureAdminIndexView, AdminUser
+from app.admin import login_manager, SecureModelView, SecureAdminIndexView, AdminUser, NewsModelView, TeacherModelView
 
 app = Flask(__name__, template_folder='templates', static_folder='static')
 app.secret_key = '170dcfee-6d7c-416f-a2b5-25788465f54a'
 app.config.from_object(Config)
 
 db, migrate = DatabaseConnectionPool.get_connection(app)
-print(db, migrate)
 db.init_app(app)
 login_manager.init_app(app)
 admin = Admin(app, name='Администрирование', index_view=SecureAdminIndexView(), template_mode='bootstrap3')
-admin.add_view(SecureModelView(Teacher, db.session, name='Преподаватели'))
-admin.add_view(SecureModelView(News, db.session, name='Новости'))
+admin.add_view(TeacherModelView(Teacher, db.session, name='Преподаватели'))
+admin.add_view(NewsModelView(News, db.session, name='Новости'))
 
 @app.route('/')
 def home():

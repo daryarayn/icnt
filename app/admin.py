@@ -31,3 +31,11 @@ class SecureModelView(ModelView):
 
 	def inaccessible_callback(self, name, **kwargs):
 		return redirect(url_for('admin_login'))
+
+
+class TeacherModelView(SecureModelView):
+	column_labels = dict(title='ФИО', description_teacher='Описание', img='Аватар')
+
+
+class NewsModelView(SecureModelView):
+	column_labels = dict(title='Заголовок', description_new='Содержание', img='Изображение')
