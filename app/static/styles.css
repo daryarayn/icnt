@@ -15,6 +15,17 @@
     src: url('fonts/PermianSansTypeface-Bold.otf');
 }
 
+/*Тело*/
+body {
+    margin: 0; /* Убираем отступы по умолчанию */
+    font-family: 'font', Arial; /* Шрифт для всего текста */
+    font-size: 20px;
+    color:#101910;
+    background-color: #FFF; /* Цвет фона */
+    display: flex; /* Используем Flexbox для вертикального выравнивания */
+    flex-direction: column; /* Вертикальное расположение элементов */
+    justify-content: center; /* Центрирование по вертикали */
+}
 /*Заголовок*/
 h1 {
     font-family: 'heading_font', Arial;
@@ -32,7 +43,7 @@ h2 {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    max-width: 800px; /* Максимальная ширина контейнера */
+    max-width: calc(100% - 192px); /* Максимальная ширина контейнера */
     margin: 24px auto; /* Центрирование контейнера */
 }
 /*Контейнер текст*/
@@ -42,6 +53,13 @@ h2 {
     display: flex; /* Используем Flexbox */
     align-items: center; /* Выравнивание по центру по вертикали */
     justify-content: space-between;
+    margin: 24px 96px;
+}
+/*Описание текст*/
+.description {
+    font-family: 'font', Arial;
+    color:#000000;
+    align-items: center; /* Выравнивание по центру по вертикали */
     margin: 24px 96px;
 }
 
@@ -57,10 +75,11 @@ h2 {
     margin-left: 12px; /* Отступ между кнопками */
 }
 .cover_header {
-    background: url(pictures/cover.jpg) fixed no-repeat center/cover;
+    background: url(pictures/cover.jpg) no-repeat center/cover;
     background-size: cover; /* Заполнение всего элемента */
     background-position: center; /* Центрирование изображения */
     height: 300px; /* Высота шапки */  
+    width: 100%; /* Ширина элемента на 100% */
 }
 
 /*Дизайн футера*/
@@ -72,6 +91,7 @@ footer {
 }
 .text_footer {
     color:white;
+    text-align: left;
     display: flex; /* Используем Flexbox для вертикального выравнивания */
     justify-content: flex-start; /* Выравниваем по горизонтали влево */
     margin: 12px 96px;
@@ -93,25 +113,45 @@ footer {
     margin-left: 12px; /* Отступ между кнопками */
 }
 
+/*Дизайн контента*/
+.images {
+    display: flex;
+    margin: 24px 48px;
+}
+.images img {
+    margin: 0 24px;
+    width: 450px;
+    height: 300px;
+}
+
 /*Дизайн карточки*/
 .card {
-    display: flex; /* Используем Flexbox для вертикального выравнивания */
-    flex-direction: column; /* Вертикальное расположение элементов */
-    justify-content: center; /* Центрирование по вертикали */
+    display: flex; /* Используем Flexbox для расположения элементов */
+    flex-direction: row; /* Горизонтальное расположение элементов */
+    align-items: flex-start; /* Выравнивание элементов по верхнему краю */
+    width: 100%;
+    margin: 24px 96px;
+    box-sizing: border-box; /* Учитываем отступы и границы в ширине */
 }
 .card-image {
     width: 200px;
-    height: 200px;
+    height: 250px;
     object-fit: cover; /* Сохранение пропорций изображения */
-    margin-bottom: 10px; /* Отступ снизу */
+    margin-right: 10px; /* Отступ справа от изображения */
+}
+.card-description {
+    display: flex; /* Используем Flexbox для расположения элементов */
+    flex-direction: column; /* Вертикальное расположение элементов */   
+    justify-content: flex-start; /* Выравнивание элементов по верхнему краю */
 }
 .card-title {
     color: #000000; /* Цвет текста */
     font-size: 20px; /* Размер шрифта */
-    margin: 5px 0; /* Отступы сверху и снизу */
+    margin: 0; /* Убираем отступы */
 }
 .card-text {
     color: #000000; /* Цвет текста */
-    font-size: 20px; /* Размер шрифта */
+    font-size: 16px; /* Размер шрифта */
     margin: 5px 0; /* Отступы сверху и снизу */
+    white-space: pre-wrap; /* Сохраняет пробелы и переносы строк */
 }

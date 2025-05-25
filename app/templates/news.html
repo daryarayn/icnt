@@ -9,9 +9,11 @@
     <div class="container">
         {% for new in news %}
             <div class="card">
-                <img src="{{ url_for('static', filename=new[1]) }}" alt="{{ new[2] }}" class="card-image">
-                <div class="card-title">{{ new[2] }}</div>
-                <div class="card-text">{{ new[3] }}</div>
+                <img src="{{ url_for('static', filename=new.img) }}" alt="{{ new.title }}" class="card-image">
+                <div class="card-description">
+                    <div class="card-title">{{ new.title }}</div>
+                    <div class="card-text">{{ new.description_new }}</div>
+                </div>
             </div>
         {% endfor %}
     </div>

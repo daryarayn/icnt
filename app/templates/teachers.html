@@ -9,9 +9,11 @@
     <div class="container">
         {% for teacher in teachers %}
             <div class="card">
-                <img src="{{ url_for('static', filename=teacher[1]) }}" alt="{{ teacher[2] }}" class="card-image">
-                <div class="card-title">{{ teacher[2] }}</div>
-                <div class="card-text">{{ teacher[3] }}</div>
+                <img src="{{ url_for('static', filename=teacher.img) }}" alt="{{ teacher.title }}" class="card-image">
+                <div class="card-description">
+                    <div class="card-title">{{ teacher.title }}</div>
+                    <div class="card-text">{{ teacher.description_teacher }}</div>
+                </div>
             </div>
         {% endfor %}
     </div>
