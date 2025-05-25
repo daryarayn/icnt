@@ -13,8 +13,9 @@ app.secret_key = '170dcfee-6d7c-416f-a2b5-25788465f54a'
 app.config.from_object(Config)
 
 db, migrate = DatabaseConnectionPool.get_connection(app)
-db.init_app(app)
-login_manager.init_app(app)
+print(db, migrate)
+# db.init_app(app)
+# login_manager.init_app(app)
 admin = Admin(app, name='Администрирование', index_view=SecureAdminIndexView(), template_mode='bootstrap3')
 admin.add_view(SecureModelView(Teacher, db.session, name='Преподаватели'))
 admin.add_view(SecureModelView(News, db.session, name='Новости'))
