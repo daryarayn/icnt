@@ -1,0 +1,16 @@
+DROP TABLE IF EXISTS teachers CASCADE;
+DROP TABLE IF EXISTS news CASCADE;
+
+CREATE TABLE IF NOT EXISTS teachers (
+    id SERIAL PRIMARY KEY,
+    img VARCHAR(100),
+    title VARCHAR(100) NOT NULL,
+    description_teacher VARCHAR(1000) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS news (
+    id SERIAL PRIMARY KEY,
+    img VARCHAR(100),
+    title VARCHAR(100) NOT NULL,
+    description_new VARCHAR(1000) NOT NULL
+);

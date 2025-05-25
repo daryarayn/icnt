@@ -1,0 +1,26 @@
+{% extends "base/base.html" %}
+
+{% block title %}Контакты{% endblock %}
+
+{% block content %}
+    <h1>Институт компьютерных наук и технологий</h1>
+
+    <h2>Контакты</h2>
+    <div class="text">
+        <br>Контакты ИКНТ
+        <br>Адрес: г. Пермь, ул. Генкеля, корп. 8, ауд.410
+        <br>Телефон: +7 (342) 239-67-20
+        <br>Электронная почта: iknt@psu.ru
+        <br>
+        <br>Часы работы:
+        <br>Пн - Пт: 8:00 - 17:00
+        <br>Сб - Вс: Выходной
+        <br>
+        <br>По вопросам поступления
+        <br>Электронная почта: ict_pk@psu.ru
+        <div class="images">
+            <img src="{{ url_for('static', filename='pictures/contacts1.jpg') }}" alt="ИКНТ">
+            <img src="{{ url_for('static', filename='pictures/contacts2.jpg') }}" alt="ИКНТ">
+        </div>
+    </div>
+{% endblock %}

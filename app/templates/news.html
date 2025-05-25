@@ -1,0 +1,18 @@
+{% extends "base/base.html" %}
+
+{% block title %}Новости{% endblock %}
+
+{% block content %}
+    <h1>Институт компьютерных наук и технологий</h1>
+
+    <h2>Новости</h2>
+    <div class="container">
+        {% for new in news %}
+            <div class="card">
+                <img src="{{ url_for('static', filename=new[1]) }}" alt="{{ new[2] }}" class="card-image">
+                <div class="card-title">{{ new[2] }}</div>
+                <div class="card-text">{{ new[3] }}</div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

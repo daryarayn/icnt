@@ -1,0 +1,117 @@
+/**/
+/*Шрифт заголовка*/
+@font-face {
+    font-family: 'heading_font'; 
+    src: url('fonts/PermianSlabSerifTypeface-Bold.otf'); 
+}
+/*Шрифт текста*/
+@font-face {
+    font-family: 'font';
+    src: url('fonts/PermianSansTypeface.otf');
+}
+/*Шрифт кнопок и жирного текста*/
+@font-face {
+    font-family: 'button_font';
+    src: url('fonts/PermianSansTypeface-Bold.otf');
+}
+
+/*Заголовок*/
+h1 {
+    font-family: 'heading_font', Arial;
+    color:#1A66FF;
+    text-align: center; 
+}
+/*Подзаголовок*/
+h2 {
+    font-family: 'heading_font', Arial;
+    color:#000000;
+    text-align: center; 
+}
+/*Контейнер*/
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 800px; /* Максимальная ширина контейнера */
+    margin: 24px auto; /* Центрирование контейнера */
+}
+/*Контейнер текст*/
+.text {
+    font-family: 'font', Arial;
+    color:#000000;
+    display: flex; /* Используем Flexbox */
+    align-items: center; /* Выравнивание по центру по вертикали */
+    justify-content: space-between;
+    margin: 24px 96px;
+}
+
+/*Дизайн хедера*/
+.menu_header {
+    display: flex; /* Используем Flexbox для вертикального выравнивания */
+    justify-content: flex-end; /* Центрирование по вертикали */
+    margin: 12px 24px;
+}
+.menu_header a {
+    color:#101910;
+    text-decoration: none; /* Убираем подчеркивание */
+    margin-left: 12px; /* Отступ между кнопками */
+}
+.cover_header {
+    background: url(pictures/cover.jpg) fixed no-repeat center/cover;
+    background-size: cover; /* Заполнение всего элемента */
+    background-position: center; /* Центрирование изображения */
+    height: 300px; /* Высота шапки */  
+}
+
+/*Дизайн футера*/
+footer {
+    background-color: #1A66FF;
+    display: flex;
+    justify-content:space-between;
+    height: 200px;
+}
+.text_footer {
+    color:white;
+    display: flex; /* Используем Flexbox для вертикального выравнивания */
+    justify-content: flex-start; /* Выравниваем по горизонтали влево */
+    margin: 12px 96px;
+}
+.right_footer {
+    display: flex; /* Используем Flexbox для вертикального выравнивания */
+    flex-direction: row;
+    margin: 0 96px;
+}
+.menu_footer {
+    display: flex; /* Используем Flexbox для вертикального выравнивания */
+    flex-direction: column; /* Вертикальное расположение элементов */
+    justify-content:flex-start;
+    margin: 12px 24px;
+}
+.menu_footer a {
+    color:white;
+    text-decoration: none; /* Убираем подчеркивание */
+    margin-left: 12px; /* Отступ между кнопками */
+}
+
+/*Дизайн карточки*/
+.card {
+    display: flex; /* Используем Flexbox для вертикального выравнивания */
+    flex-direction: column; /* Вертикальное расположение элементов */
+    justify-content: center; /* Центрирование по вертикали */
+}
+.card-image {
+    width: 200px;
+    height: 200px;
+    object-fit: cover; /* Сохранение пропорций изображения */
+    margin-bottom: 10px; /* Отступ снизу */
+}
+.card-title {
+    color: #000000; /* Цвет текста */
+    font-size: 20px; /* Размер шрифта */
+    margin: 5px 0; /* Отступы сверху и снизу */
+}
+.card-text {
+    color: #000000; /* Цвет текста */
+    font-size: 20px; /* Размер шрифта */
+    margin: 5px 0; /* Отступы сверху и снизу */
+}
